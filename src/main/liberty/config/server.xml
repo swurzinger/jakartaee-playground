@@ -1,0 +1,27 @@
+<server description="defaultServer">
+
+    <featureManager>
+        <feature>jakartaee-10.0</feature>
+        <feature>beanValidation-3.0</feature>
+    </featureManager>
+
+    <basicRegistry id="defaultBasicRegistry" realm="BasicRealm">
+        <user name="username" password="password" />
+    </basicRegistry>
+
+    <keyStore id="defaultKeyStore" password="password" />
+
+    <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" httpsPort="9443" />
+
+    <webApplication location="jakartaee-hello-world.war" contextRoot="/"/>
+
+    <!-- PostgreSQL DataSource -->
+    <dataSource id="PostgresDS" jndiName="jdbc/PostgresDS">
+        <jdbcDriver libraryRef="PostgresLib"/>
+        <properties databaseName="libertydev" serverName="localhost" portNumber="5432" user="postgres" password="postgres"/>
+    </dataSource>
+
+    <library id="PostgresLib">
+        <fileset dir="${server.config.dir}/lib/global" includes="postgresql-42.6.2.jar"/>
+    </library>
+</server>

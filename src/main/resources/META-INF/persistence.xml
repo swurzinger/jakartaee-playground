@@ -1,0 +1,9 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="default" transaction-type="JTA">
+        <jta-data-source>jdbc/PostgresDS</jta-data-source>
+        <class>org.eclipse.jakarta.hello.entities.User</class>
+        <properties>
+            <property name="jakarta.persistence.schema-generation.database.action" value="none"/>
+        </properties>
+    </persistence-unit>
+</persistence>
