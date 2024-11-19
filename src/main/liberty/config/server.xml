@@ -3,6 +3,7 @@
     <featureManager>
         <feature>jakartaee-10.0</feature>
         <feature>beanValidation-3.0</feature>
+        <feature>enterpriseBeansPersistentTimer-4.0</feature>
     </featureManager>
 
     <basicRegistry id="defaultBasicRegistry" realm="BasicRealm">
@@ -24,4 +25,9 @@
     <library id="PostgresLib">
         <fileset dir="${server.config.dir}/lib/global" includes="postgresql-42.6.2.jar"/>
     </library>
+
+    <persistentExecutor id="defaultEJBPersistentTimerExecutor" taskStoreRef="MyDBStore"/>
+    <databaseStore id="MyDBStore" dataSourceRef="PostgresDS" tablePrefix="MYTIMERS">
+    </databaseStore>
+
 </server>
