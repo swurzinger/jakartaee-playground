@@ -19,6 +19,7 @@ public class HelloApplication extends Application {
         var flyway = Flyway.configure()
                 .dataSource(ds)
                 .load();
+        // flyway.baseline();
         flyway.migrate();
     }
 }

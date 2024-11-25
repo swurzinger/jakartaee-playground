@@ -4,6 +4,7 @@
         <feature>jakartaee-10.0</feature>
         <feature>beanValidation-3.0</feature>
         <feature>enterpriseBeansPersistentTimer-4.0</feature>
+        <feature>mpOpenAPI-3.1</feature>
     </featureManager>
 
     <basicRegistry id="defaultBasicRegistry" realm="BasicRealm">
